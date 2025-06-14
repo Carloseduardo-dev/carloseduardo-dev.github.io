@@ -13,7 +13,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+      background: #0a0a0a;
       color: #ffffff;
       min-height: 100vh;
       display: flex;
@@ -23,36 +23,13 @@
       overflow-x: hidden;
     }
 
-    /* Animated background particles */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.1) 0%, transparent 50%);
-      z-index: -1;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
-
     .container {
-      max-width: 480px;
+      max-width: 450px;
       width: 100%;
-      padding: 60px 24px 40px;
+      padding: 60px 20px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
 
     .profile-section {
@@ -62,67 +39,33 @@
     }
 
     .profile-img {
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(255, 255, 255, 0.2);
+      border: 3px solid #ffffff;
       margin-bottom: 24px;
-      position: relative;
-      box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
     }
 
     .profile-img:hover {
-      transform: translateY(-4px);
-      box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.2);
-    }
-
-    .profile-img::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .profile-img:hover::after {
-      opacity: 0.5;
+      transform: scale(1.05);
     }
 
     .name {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
       margin-bottom: 8px;
-      background: linear-gradient(135deg, #ffffff, #a0a0a0);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.02em;
+      color: #ffffff;
+      letter-spacing: -0.01em;
     }
 
     .title {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      color: #a0a0a0;
       font-weight: 400;
-      margin-bottom: 16px;
-    }
-
-    .bio {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.5;
-      max-width: 320px;
+      margin-bottom: 32px;
     }
 
     .links-container {
@@ -135,42 +78,24 @@
     .link {
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 20px 24px;
-      border-radius: 16px;
+      justify-content: center;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 18px 24px;
+      border-radius: 12px;
       text-decoration: none;
       color: white;
       font-weight: 500;
       font-size: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
+      transition: all 0.2s ease;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .link:hover::before {
-      left: 100%;
+      position: relative;
     }
 
     .link:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
+      background: #2a2a2a;
+      border-color: #555;
+      transform: translateY(-1px);
     }
 
     .link:active {
@@ -178,66 +103,15 @@
     }
 
     .link-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      margin-right: 18px;
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
       object-fit: cover;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .link:hover .link-icon {
-      transform: scale(1.1);
-    }
-
-    .link-content {
-      flex: 1;
     }
 
     .link-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-      font-size: 1.05rem;
-    }
-
-    .link-subtitle {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .link-arrow {
-      width: 20px;
-      height: 20px;
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
-
-    .link:hover .link-arrow {
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    /* Professional colors for each platform */
-    .link.linkedin {
-      background: linear-gradient(135deg, rgba(0, 119, 181, 0.1), rgba(0, 119, 181, 0.05));
-      border-color: rgba(0, 119, 181, 0.2);
-    }
-
-    .link.github {
-      background: linear-gradient(135deg, rgba(240, 246, 252, 0.1), rgba(240, 246, 252, 0.05));
-      border-color: rgba(240, 246, 252, 0.2);
-    }
-
-    .link.instagram {
-      background: linear-gradient(135deg, rgba(225, 48, 108, 0.1), rgba(225, 48, 108, 0.05));
-      border-color: rgba(225, 48, 108, 0.2);
-    }
-
-    .link.discord {
-      background: linear-gradient(135deg, rgba(88, 101, 242, 0.1), rgba(88, 101, 242, 0.05));
-      border-color: rgba(88, 101, 242, 0.2);
+      font-weight: 500;
+      font-size: 1rem;
     }
 
     .footer {
@@ -270,9 +144,9 @@
 
     /* Loading animation */
     .container > * {
-      animation: fadeInUp 0.8s ease forwards;
+      animation: fadeInUp 0.6s ease forwards;
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
 
     .profile-section { animation-delay: 0.1s; }
@@ -298,59 +172,35 @@
 <body>
   <div class="container">
     <div class="profile-section">
-      <img class="profile-img" src="https://raw.githubusercontent.com/Carloseduardo-dev/carloseduardo-dev.github.io/b25c218881f02ce8c309c706783c00e59c30ad7f/perfilGit2.pgn.jpg" alt="Carlos Eduardo - Desenvolvedor Full Stack" />
+      <img class="profile-img" src="https://raw.githubusercontent.com/Carloseduardo-dev/carloseduardo-dev.github.io/b25c218881f02ce8c309c706783c00e59c30ad7f/perfilGit2.pgn.jpg" alt="Carlos Eduardo - Backend Developer" />
       <h1 class="name">Carlos Eduardo</h1>
       <p class="title">Backend Developer</p>
     </div>
 
     <div class="links-container">
-      <a class="link linkedin" href="https://www.linkedin.com/in/carlos-eduardo-ferreira-132295200" target="_blank" rel="noopener noreferrer">
+      <a class="link" href="https://www.linkedin.com/in/carlos-eduardo-ferreira-132295200" target="_blank" rel="noopener noreferrer">
         <img class="link-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
-        <div class="link-content">
-          <div class="link-title">LinkedIn</div>
-          <div class="link-subtitle">Conexões profissionais</div>
-        </div>
-        <svg class="link-arrow arrow-icon" width="20" height="20" viewBox="0 0 24 24">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
+        <span class="link-title">LinkedIn</span>
       </a>
 
-      <a class="link github" href="https://github.com/Carloseduardo-dev" target="_blank" rel="noopener noreferrer">
+      <a class="link" href="https://github.com/Carloseduardo-dev" target="_blank" rel="noopener noreferrer">
         <img class="link-icon" src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
-        <div class="link-content">
-          <div class="link-title">GitHub</div>
-          <div class="link-subtitle">Projetos e código aberto</div>
-        </div>
-        <svg class="link-arrow arrow-icon" width="20" height="20" viewBox="0 0 24 24">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
+        <span class="link-title">GitHub</span>
       </a>
 
-      <a class="link instagram" href="https://www.instagram.com/lm_caduu" target="_blank" rel="noopener noreferrer">
+      <a class="link" href="https://www.instagram.com/lm_caduu" target="_blank" rel="noopener noreferrer">
         <img class="link-icon" src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
-        <div class="link-content">
-          <div class="link-title">Instagram</div>
-          <div class="link-subtitle">Conteúdo visual e updates</div>
-        </div>
-        <svg class="link-arrow arrow-icon" width="20" height="20" viewBox="0 0 24 24">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
+        <span class="link-title">Instagram</span>
       </a>
 
-      <a class="link discord" href="https://discord.com/users/cadu_021" target="_blank" rel="noopener noreferrer">
+      <a class="link" href="https://discord.com/users/cadu_021" target="_blank" rel="noopener noreferrer">
         <img class="link-icon" src="https://cdn-icons-png.flaticon.com/512/3670/3670157.png" alt="Discord" />
-        <div class="link-content">
-          <div class="link-title">Discord</div>
-          <div class="link-subtitle">@cadu_021</div>
-        </div>
-        <svg class="link-arrow arrow-icon" width="20" height="20" viewBox="0 0 24 24">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
+        <span class="link-title">Discord</span>
       </a>
     </div>
 
     <div class="footer">
-      © 2025 Carlos Eduardo - Desenvolvedor Full Stack
+      © 2025 Carlos Eduardo
     </div>
   </div>
 </body>
