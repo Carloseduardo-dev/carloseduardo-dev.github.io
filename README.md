@@ -54,7 +54,7 @@ Perfeito para usar como **link na bio**, **apresentação pessoal** ou **templat
 
 ## 📸 Preview
 
-https://github.com/Carloseduardo-dev/im_cadu01
+[https://carloseduardo-dev.github.io/im_cadu01/]
 
 ---
 
