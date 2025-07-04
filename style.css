@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Código animado de fundo */
+/* Código animado de fundo
 .code-background {
   position: fixed;
   top: 0;
@@ -36,7 +36,7 @@ body {
   text-shadow: 0 0 4px #00ff99;
   overflow: hidden;
   pointer-events: none;
-}
+} */
 .code-line {
   position: absolute;
   white-space: nowrap;
